@@ -1,20 +1,22 @@
+
 # The Impact of Generative AI Assistance on Programming Learning Effectiveness Among Undergraduate Students
 
 **Authors:** Yerkindik Ailen and Aitkali Dariga  
 **Research Type:** Quantitative Experimental Study  
-**Course Project:** Research Methods, 2026
+**Course:** Research Methods, 2026  
+**Repository:** https://github.com/aitkalidariga/AI-Programming-Research-Team
 
 ## 1. Project Overview
 
-This project studies how generative AI affects undergraduate students when they learn programming.
+This research examines how generative AI assistance affects programming learning among undergraduate students.
 
-We plan to compare three groups:
+The planned experiment compares three groups:
 
-- **Group A (No AI):** Students solve programming tasks without AI.
-- **Group B (AI Hints):** Students can use AI for hints and explanations.
-- **Group C (AI Solutions):** Students can use AI-generated solutions.
+- **Group A (No AI):** Students complete programming tasks without AI assistance.
+- **Group B (AI Hints):** Students use AI-generated hints and explanations.
+- **Group C (AI Solutions):** Students use direct AI-generated solutions.
 
-We want to find out whether AI helps students complete tasks faster and understand programming better. We also want to check if students can solve similar problems independently after using AI.
+The study focuses on task performance, completion time, understanding of programming concepts, and independent problem-solving skills.
 
 ## 2. Research Questions
 
@@ -31,10 +33,12 @@ We want to find out whether AI helps students complete tasks faster and understa
 **Research Design:** Planned comparative experiment with three student groups.
 
 ### Independent Variables
+
 - Access to generative AI
-- Type of AI assistance (No AI, AI Hints, AI Solutions)
+- Type of AI assistance: No AI, AI Hints, AI Solutions
 
 ### Dependent Variables
+
 - Programming task score (%)
 - Task completion time (minutes)
 - Concept test score (%)
@@ -42,25 +46,22 @@ We want to find out whether AI helps students complete tasks faster and understa
 - Independent programming performance without AI
 
 ### Controlled Variables
+
 - Programming language
 - Task difficulty
 - Time limits
 - Learning materials
 - Evaluation criteria
 
-We will also consider students' previous programming experience when analyzing the results.
+Previous programming experience will also be considered during analysis.
 
 ### Planned Experiment
 
-The experiment will have three main stages:
+1. **Initial Assessment:** Evaluate students' programming knowledge before the experiment.
+2. **Programming Practice:** Students complete programming tasks under their assigned AI assistance conditions.
+3. **Independent Assessment:** Students complete new programming tasks without AI assistance.
 
-1. **Initial assessment:** Check students' programming knowledge before the experiment.
-2. **Programming practice:** Students complete tasks using their assigned AI assistance conditions.
-3. **Independent assessment:** Students complete new programming tasks without AI assistance.
-
-The results will be compared to understand how different types of AI support affect learning.
-
-The number of participants and the final statistical analysis method will be determined before collecting real data.
+The participant count and statistical analysis methods will be determined before collecting real data.
 
 ## 4. Research Hypotheses
 
@@ -84,14 +85,12 @@ The number of participants and the final statistical analysis method will be det
 
 ## 5. Evaluation Metrics
 
-We use the following metrics to compare the three groups.
-
 | Metric | Description | Unit |
 |---|---|---|
 | Task Score | Percentage of passed programming test cases | % |
-| Completion Time | Time needed to finish a task | Minutes |
-| Concept Test Score | Percentage of correct concept test answers | % |
-| Programming Errors | Number of errors made during programming | Count |
+| Completion Time | Time required to complete a task | Minutes |
+| Concept Test Score | Percentage of correct answers | % |
+| Programming Errors | Number of recorded programming errors | Count |
 | Independent Task Score | Task score measured without AI assistance | % |
 | Valid Results Rate | Percentage of valid dataset records | % |
 
@@ -103,9 +102,7 @@ We use the following metrics to compare the three groups.
 
 **Baseline:** Students working without AI assistance.
 
-The current sample benchmark calculates task scores, completion times, concept scores, and programming errors.
-
-Independent task performance and the valid results rate are planned for the full experiment and are not yet calculated by the current script.
+The current benchmark calculates task scores, completion times, concept scores, and programming errors. Independent task performance and valid results rate are planned for the full experiment.
 
 ## 6. Repository Structure
 
@@ -129,58 +126,41 @@ AI-Programming-Research-Team/
 └── requirements.txt
 ```
 
-The repository contains a Python benchmark, sample data, configuration files, and a Docker environment.
-
-The benchmark currently reads its dataset path from `configs/config.json`. The YAML file contains additional planned settings but is not used by the current script.
+The final Methodology Passport Card will be added to the `docs/` directory.
 
 ## 7. System Requirements
 
-- Python 3.11
-- Docker Desktop (optional)
+- Docker Desktop
 - Windows, Linux, or macOS
-- Internet connection for installing dependencies
+- Internet connection for the initial Docker image build
 
-## 8. How to Run the Project
+The Docker environment uses Python 3.11.
 
-There are two ways to run the benchmark.
+## 8. Quickstart Guide
 
-### Option 1: Using Docker
+Open a terminal in the downloaded repository folder.
 
-Open a terminal in the repository folder.
-
-Build the Docker image:
+### Step 1: Build the Docker Image
 
 ```bash
 docker build -t ai-programming-research .
 ```
 
-Run the benchmark:
+### Step 2: Run the Benchmark
 
 ```bash
 docker run --rm ai-programming-research
 ```
 
-### Option 2: Using Python
+The benchmark reads the sample dataset and calculates average performance metrics for each group.
 
-Install the required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the benchmark:
-
-```bash
-python src/benchmark.py
-```
-
-The program reads the sample CSV file and calculates average results for each group.
+Dependencies from `requirements.txt` are installed automatically during the Docker image build.
 
 ## 9. Sample Benchmark Results
 
-We created a small synthetic dataset to test our benchmark.
+A synthetic dataset containing nine student records was created to test the benchmark.
 
-The dataset contains nine student records, with three records in each group.
+Each group contains three sample records.
 
 | Group | Average Task Score | Average Completion Time | Average Concept Score |
 |---|---|---|---|
@@ -188,71 +168,78 @@ The dataset contains nine student records, with three records in each group.
 | AI Hints | 86.67% | 25.67 min | 86.67% |
 | AI Solutions | 76.67% | 20.33 min | 66.67% |
 
-In this sample, the AI Hints group has the highest average task and concept scores. The AI Solutions group has the shortest completion time.
+The benchmark also calculates average programming errors.
 
-**Important:** These results are based on synthetic data, not real students. They are only used to test the program and cannot confirm our research hypotheses.
+In this synthetic example, the AI Hints group has the highest average task and concept scores. The AI Solutions group has the shortest completion time.
+
+**Important:** These results are based on synthetic data, not real students. They are used only to test the benchmark and cannot confirm the research hypotheses.
 
 ## 10. Reproducibility and Testing
 
-We use Docker to make the benchmark easier to run on different computers.
+The repository includes:
 
-The project includes:
-
-- A sample CSV dataset
-- A Python benchmark script
+- Python benchmark script
+- Synthetic CSV dataset
 - Configuration files
-- A Dockerfile
-- A GitHub Actions workflow
+- Dockerfile
+- GitHub Actions workflow
 
-Running the benchmark with the same dataset produces the same results.
+The benchmark uses `configs/config.json` to locate its dataset. The `config.yaml` file contains additional planned settings.
+
+### Docker Testing
+
+The Docker image was successfully built and the benchmark was executed locally.
+
+The output confirmed:
+
+```text
+AI Programming Research Benchmark
+Data type: synthetic
+
+Group: ai_hints
+Number of students: 3
+Average task score: 86.67%
+
+Group: ai_solutions
+Number of students: 3
+Average task score: 76.67%
+
+Group: no_ai
+Number of students: 3
+Average task score: 70.00%
+
+Benchmark completed successfully.
+Note: Synthetic data, not real research results.
+```
 
 ### GitHub Actions
 
-The repository includes a workflow called **Docker Benchmark Check**.
+The repository includes a workflow named **Docker Benchmark Check**.
 
-It is configured to:
+It automatically builds the Docker image and runs the benchmark when changes are pushed to the repository.
 
-1. Download the repository.
-2. Build the Docker image.
-3. Run the benchmark.
+Successful workflow runs are shown with green check marks in the GitHub **Actions** tab.
 
-The workflow runs after pushes and pull requests. It can also be started manually.
+These checks verify that the benchmark can run successfully.
 
-This helps us check whether the benchmark runs correctly after changes to the repository.
-
-### Smoke Test
-
-The nine synthetic records are used for a basic technical test.
-
-We check whether:
-
-- The CSV file can be read.
-- The benchmark runs without errors.
-- Average metrics are calculated correctly.
-- Docker can execute the benchmark.
-
-These tests check the technical part of the project, not the research hypotheses.
-
-## 11. Current Project Status
+## 11. Project Status
 
 **Task 2: Methodology and Reproducible Benchmark Pipeline**
 
-We have prepared the research methodology, hypotheses, evaluation metrics, and initial benchmark.
+Completed:
 
-The Python script can calculate group averages using the synthetic dataset.
+- Research questions and hypotheses
+- Research variables and evaluation metrics
+- Python benchmark script
+- Synthetic sample dataset
+- Docker environment
+- Successful local benchmark execution
+- GitHub Actions testing
 
-Our next steps are to:
-
-1. Prepare the final experimental procedure.
-2. Collect data from real undergraduate students.
-3. Test independent programming performance without AI.
-4. Compare the three groups using statistical analysis.
-5. Evaluate the research hypotheses.
-
-The project is still in the preparation and technical testing stage.
+The next research stage will involve collecting real student data, measuring independent programming performance, and conducting statistical analysis.
 
 ## 12. Citation and License
 
 Yerkindik, A., & Aitkali, D. (2026). *The Impact of Generative AI Assistance on Programming Learning Effectiveness Among Undergraduate Students*. Research Methods Course Project.
 
-**License:** MIT License. See the LICENSE file.
+**License:** MIT License. See `LICENSE`.
