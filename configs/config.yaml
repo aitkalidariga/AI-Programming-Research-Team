@@ -1,0 +1,25 @@
+
+project:
+  name: "AI Programming Research"
+  data_type: "synthetic"
+
+data:
+  input_file: "data/sample/sample_results.csv"
+  output_file: "results/benchmark_results.json"
+
+experiment:
+  groups:
+    - "no_ai"
+    - "ai_hints"
+    - "ai_solutions"
+  timeout_seconds: 300
+
+metrics:
+  primary: "independent_task_score"
+  secondary:
+    - "completion_time_min"
+    - "concept_score"
+    - "programming_errors"
+  guardrail:
+    - "valid_results_rate"
+    - "execution_error_rate"

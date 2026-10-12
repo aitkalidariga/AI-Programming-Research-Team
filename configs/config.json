@@ -1,0 +1,12 @@
+
+{
+  "data_path": "data/sample/sample_results.csv",
+  "data_type": "synthetic",
+  "groups": [
+    "no_ai",
+    "ai_hints",
+    "ai_solutions"
+  ],
+  "task_timeout_minutes": 45,
+  "random_seed": 42
+}
