@@ -39,6 +39,9 @@ jobs:
       - name: Process Task 3 data
         run: python -m src.process_data
 
+      - name: Run Task 3 regression tests
+        run: python -m unittest discover -s tests -v
+
       - name: Generate Task 3 figures
         run: python -m src.visualize
 
