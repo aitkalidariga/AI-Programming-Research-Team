@@ -301,3 +301,21 @@ Or open `notebooks/01_data_analysis.ipynb` in Jupyter and run **Kernel → Resta
 ### Research Limitations and Next Steps
 
 The generated sample is *not* a replacement for real Weeks 7–8 collection logs. To convert the demonstration into an actual study, collect real participant data with appropriate consent and privacy safeguards; use separate real-data validation, participant-level grouping, preregistered analysis and independent programming assessments. The demo processing script intentionally rejects any data type other than `synthetic` to prevent accidental representation as actual results.
+
+## Interpretation of Statistical Metrics
+
+The Task 3 analysis extends the original benchmark by introducing descriptive statistics and uncertainty estimation for the three experimental conditions: No AI, AI Hints, and AI Solutions.
+
+**Mean and Standard Deviation:** The mean summarizes average performance, while standard deviation describes variation between observations.
+
+**Median and Percentiles:** The median represents the central observation. The 95th and 99th percentiles help identify unusually high values, particularly for task completion time.
+
+**95% Confidence Intervals:** Bootstrap confidence intervals are estimated using 3,000 resamples and fixed random seeds to ensure reproducibility. They illustrate uncertainty in the estimated group means.
+
+**Guardrail Metrics:** Execution error rate and valid results rate are monitored to assess the reliability and quality of the evaluation data.
+
+### Interpretation and Limitations
+
+The current analysis uses synthetic records for demonstrating the research pipeline. The numerical differences between groups must not be interpreted as evidence of actual learning improvements.
+
+Future research will require real participant observations, independent programming assessments, and appropriate statistical hypothesis testing.
